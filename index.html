@@ -7,8 +7,9 @@
 				if(username.search(/^[a-zA-z0-9]{1,}$/)!=-1){
 					document.getElementById("imageTag").src = "fig.gif";
 					document.getElementById("username").disabled = true;
-					document.getElementById("mainButton").innerHTML = "buy stickers";
+				//	document.getElementById("mainButton").innerHTML = "buy stickers";
 				//	document.getElementById("mainButton").href="http://justinleger.ca";
+					document.getElementById("mainButton").style.display = "none";
 					document.getElementById("secondButton").style.display="block";
 					setTimeout(function() {fill();}, 1500);
 				} else {
@@ -26,6 +27,7 @@
 				document.getElementById("username").disabled = false;
 				document.getElementById("username").value="";
 				document.getElementById("secondButton").style.display = "none";
+				document.getElementById("mainButton").style.display = "block";
 				document.getElementById("mainButton").innerHTML = "Generate Snap Tag";
 				document.getElementById("mainButton").href="#";
 			}
