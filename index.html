@@ -1,6 +1,7 @@
 <html>
 	<header>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script src="jscolor.js"></script>
 		<script>
 			function displayCoolAnimation(){
 				var username = document.getElementById("username").value;
@@ -10,7 +11,7 @@
 				//	document.getElementById("mainButton").innerHTML = "buy stickers";
 				//	document.getElementById("mainButton").href="http://justinleger.ca";
 					document.getElementById("mainButton").style.display = "none";
-					document.getElementById("secondButton").style.display="block";
+					document.getElementById("hidden").style.display = "inline";
 					setTimeout(function() {fill();}, 1500);
 				} else {
 					alert("Invalid username");
@@ -18,10 +19,16 @@
 				return false;
 			}
 			function fill(){
-				document.getElementById("mainButton").href="http://justinleger.ca";
 				var username = document.getElementById("username").value;
-				var imageTag = document.getElementById("imageTag");
-				imageTag.src="https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username="+username+"&type=PNG&size=400";
+				var tag = document.getElementById("tag1");
+				var theUrl = "http://159.203.39.241/index2.php?username="+username;
+                var xmlHttp = null;
+                xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", theUrl, false );
+                xmlHttp.send( null );
+                var response  = xmlHttp.responseText;
+				tag.innerHTML  = response+"<canvas id=\"canvas\" width=400 height=400></canvas>";
+				showHTML();
 			}
 			function changeUsername(){
 				document.getElementById("username").disabled = false;
@@ -30,6 +37,47 @@
 				document.getElementById("mainButton").style.display = "block";
 				document.getElementById("mainButton").innerHTML = "Generate Snap Tag";
 				document.getElementById("mainButton").href="#";
+			}
+			function setBackColor(picker) {
+				document.getElementById('back').style.fill = '#' + picker.toString();
+				showHTML();
+			}
+			function setBorderColor(picker) {
+                                document.getElementById('border').style.fill = '#' + picker.toString();
+                                showHTML();
+                        }
+			function setGhostColor(picker) {
+                                document.getElementById('ghost').style.fill = '#' + picker.toString();
+                                showHTML();
+                        }
+			function showHTML(){
+				var obj = document.getElementById("snaptag");
+				//console.log(obj.innerHTML);
+				var svgText = document.getElementById("tag").outerHTML;
+			var myCanvas = document.getElementById("canvas");
+			var ctxt = myCanvas.getContext("2d");
+			ctxt.imageSmoothingEnabled = true;
+			function drawInlineSVG(ctx, rawSVG, callback) {
+
+			    var svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
+			        domURL = self.URL || self.webkitURL || self,
+			        url = domURL.createObjectURL(svg),
+			        img = new Image;
+			    
+			    img.onload = function () {
+			        ctx.drawImage(this, 0, 0);     
+			        domURL.revokeObjectURL(url);
+			        callback(this);
+			    };
+			    
+			    img.src = url;
+			}
+
+			// usage:
+			drawInlineSVG(ctxt, svgText, function() {
+			    //console.log(canvas.toDataURL());  // -> PNG
+			    //alert("see console for output...");
+			});
 			}
 		</script>
 		<style>
@@ -60,6 +108,26 @@
     				border-width: 0.2em;
 				min-height: 1em;
 				margin: 0 0 0 0;
+    				padding: 13px 1.5em;
+    				border-style: solid;
+    				margin-top: 0px;
+				color:black;
+				text-decoration:none;
+				text-align: center;
+				border-radius: 5px;
+				font-weight: 700;
+			}
+			.button2{
+	
+				width: 292px!important;
+				display: inline-block;
+    				background-color: transparent;
+    				border-width: 0.2em;
+				min-height: 1em;
+				margin: 0 0 0 0;
+				font-family: helveticaNL;
+				font-size:0.95em;
+				border-color: black;
     				padding: 13px 1.5em;
     				border-style: solid;
     				margin-top: 0px;
@@ -111,14 +179,34 @@
 	</header>
 	<body>	
 		<div align="center">
-
-			<img src="snapcode.png" id="imageTag"/>
+			<div id="tag1">
+				<img src="snapcode.png" id="imageTag"/>
+			</div>
 			<br>
 			<form onsubmit="return displayCoolAnimation()">
 				<input type="text" id="username" placeholder="enter snapchat username"onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter snapchat username'"autocomplete="off">
 			</form>
 			<a class="button" id="mainButton" onclick="displayCoolAnimation()">Generate Snap Tag</a>
-			<a class="button" id="secondButton" onclick="changeUsername()" style ="display:none;">Change Username</a>
+			<div id="hidden" style="display:none">
+				<button class="button2 jscolor
+	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setBackColor(this)'}">
+	    			Pick background color
+				</button>
+				<br>
+				<br>
+				<button class="button2 jscolor
+	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setBorderColor(this)'}">
+	    			Pick border color
+				</button>
+				<br>
+				<br>
+				<button class="button2 jscolor
+	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setGhostColor(this)'}">
+	    			Pick ghost color
+				</button>
+				<br>
+			</div>
+			
 		</div>
 	</body>
 <html>
