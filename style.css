@@ -3,8 +3,6 @@
 		src: url(HelveticaNeue-Light.otf);
 }
 body{
-    
-	padding-top:20px!important;
 	font-family: helveticaNL;
     min-width: 300px;
 }
@@ -16,6 +14,7 @@ html, body {
     
 }
 .main {
+	padding-top:20px!important;
     height: 100%;
     width: 100%;
     display: table;
