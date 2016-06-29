@@ -7,14 +7,15 @@ This little website allows you to get your snapcode via the Snapchat api. The sn
 
 ##API
 
-I made a simple php api that inserts id tag in the svg to be able to modify it via css or using javascript.
+I made a simple php script that inserts id tag in the svg to be able to modify it via css or using javascript.
 
     <?php
         header('Access-Control-Allow-Origin: *');
         $username = $_GET["username"];
+        $size = $_GET["size"];
         if(strlen($username)>0){
                 //snapchat api call
-                $url = "https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username=".$username."&type=SVG&size=300";
+                $url = "https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username=".$username."&type=SVG&size=".$size;
                 $file = file_get_contents($url, false, $context);
                 $pos =strpos($file,"svg");
                 $file = substr($file, 0, $pos+3)." id=\"tag\"".substr($file, $pos+4);
@@ -27,3 +28,5 @@ I made a simple php api that inserts id tag in the svg to be able to modify it v
                 echo $file;
         }
     ?>
+    
+You can try my script at ![http://159.203.39.241/snapcode.php](http://159.203.39.241/snapcode.php?username=jusleg&size=400)
