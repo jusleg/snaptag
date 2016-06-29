@@ -5,7 +5,7 @@ var done = false;
 function displayCoolAnimation(){
 	var username = document.getElementById("username").value;
 	if(username.search(/^[a-zA-z0-9]{1,}$/)!=-1){
-		document.getElementById("imageTag").src = "fig.gif";
+		document.getElementById("imageTag").src = "/img/fig.gif";
 		document.getElementById("username").disabled = true;
 		document.getElementById("mainButton").style.display = "none";
 		document.getElementById("hidden").style.display = "inline";
