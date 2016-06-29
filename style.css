@@ -9,6 +9,7 @@
 }
 .linkbottom:hover{
 	color:black;
+	opacity:1;
 }
 #footer{
     font-size:0.8em;
