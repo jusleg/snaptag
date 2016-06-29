@@ -37,8 +37,9 @@ I am using the php script because it inserts the necessary id tags to do DOM man
 
 ![guidelines](img/guidelines.png)
 
-| **Snapcode** |   #tag  |
+| **Name** |   **id**  |
 |:------------:|:-------:|
+| **Snapcode** |   #tag  |
 |   **Ghost**  |  #ghost |
 |   **Code**   |  #back  |
 |   **Frame**  | #border |
