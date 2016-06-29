@@ -1,212 +1,43 @@
 <html>
 	<header>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Snapcode generator</title>
 		<script src="jscolor.js"></script>
-		<script>
-			function displayCoolAnimation(){
-				var username = document.getElementById("username").value;
-				if(username.search(/^[a-zA-z0-9]{1,}$/)!=-1){
-					document.getElementById("imageTag").src = "fig.gif";
-					document.getElementById("username").disabled = true;
-				//	document.getElementById("mainButton").innerHTML = "buy stickers";
-				//	document.getElementById("mainButton").href="http://justinleger.ca";
-					document.getElementById("mainButton").style.display = "none";
-					document.getElementById("hidden").style.display = "inline";
-					setTimeout(function() {fill();}, 1500);
-				} else {
-					alert("Invalid username");
-				}
-				return false;
-			}
-			function fill(){
-				var username = document.getElementById("username").value;
-				var tag = document.getElementById("tag1");
-				var theUrl = "http://159.203.39.241/index2.php?username="+username;
-                var xmlHttp = null;
-                xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", theUrl, false );
-                xmlHttp.send( null );
-                var response  = xmlHttp.responseText;
-				tag.innerHTML  = response+"<canvas id=\"canvas\" width=400 height=400></canvas>";
-				showHTML();
-			}
-			function changeUsername(){
-				document.getElementById("username").disabled = false;
-				document.getElementById("username").value="";
-				document.getElementById("secondButton").style.display = "none";
-				document.getElementById("mainButton").style.display = "block";
-				document.getElementById("mainButton").innerHTML = "Generate Snap Tag";
-				document.getElementById("mainButton").href="#";
-			}
-			function setBackColor(picker) {
-				document.getElementById('back').style.fill = '#' + picker.toString();
-				showHTML();
-			}
-			function setBorderColor(picker) {
-                                document.getElementById('border').style.fill = '#' + picker.toString();
-                                showHTML();
-                        }
-			function setGhostColor(picker) {
-                                document.getElementById('ghost').style.fill = '#' + picker.toString();
-                                showHTML();
-                        }
-			function showHTML(){
-				var obj = document.getElementById("snaptag");
-				//console.log(obj.innerHTML);
-				var svgText = document.getElementById("tag").outerHTML;
-			var myCanvas = document.getElementById("canvas");
-			var ctxt = myCanvas.getContext("2d");
-			ctxt.imageSmoothingEnabled = true;
-			function drawInlineSVG(ctx, rawSVG, callback) {
-
-			    var svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
-			        domURL = self.URL || self.webkitURL || self,
-			        url = domURL.createObjectURL(svg),
-			        img = new Image;
-			    
-			    img.onload = function () {
-			        ctx.drawImage(this, 0, 0);     
-			        domURL.revokeObjectURL(url);
-			        callback(this);
-			    };
-			    
-			    img.src = url;
-			}
-
-			// usage:
-			drawInlineSVG(ctxt, svgText, function() {
-			    //console.log(canvas.toDataURL());  // -> PNG
-			    //alert("see console for output...");
-			});
-			}
-		</script>
-		<style>
-			@font-face {
-   				font-family: helveticaNL;
-    				src: url(HelveticaNeue-Light.otf);
-			}
-			body{
-				padding-top:20px;
-				font-family: helveticaNL;
-				display: table-cell;
-    				vertical-align: middle;
-				width:400px;
-			}
-			html, body {
- 			   height: 100%;
-			}
-
-			html {
-			    display: table;
-			    margin: auto;
-			}
-			.button{
-	
-				width: 240px!important;
-				display: inline-block;
-    				background-color: transparent;
-    				border-width: 0.2em;
-				min-height: 1em;
-				margin: 0 0 0 0;
-    				padding: 13px 1.5em;
-    				border-style: solid;
-    				margin-top: 0px;
-				color:black;
-				text-decoration:none;
-				text-align: center;
-				border-radius: 5px;
-				font-weight: 700;
-			}
-			.button2{
-	
-				width: 292px!important;
-				display: inline-block;
-    				background-color: transparent;
-    				border-width: 0.2em;
-				min-height: 1em;
-				margin: 0 0 0 0;
-				font-family: helveticaNL;
-				font-size:0.95em;
-				border-color: black;
-    				padding: 13px 1.5em;
-    				border-style: solid;
-    				margin-top: 0px;
-				color:black;
-				text-decoration:none;
-				text-align: center;
-				border-radius: 5px;
-				font-weight: 700;
-			}
-			input[type=text]{
-        			border: 0px;
-        			background: transparent;
-				min-width: 240px!important;
-                                display: inline-block;
-    			}
-			#username{
- 				 color:black;
-				font-weight:700
-				min-height: 1em;
-                                padding: 13px 1.5em;
-				text-align:center;
-				width:400px;
-				font-size:16px;
-			}
-			form{
-				margin:0;
-				width:400px;
-				padding:0;
-			}
-
-			::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-			    color:    black;
-			}
-			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			   color:    black;
-			   opacity:  1;
-			}
-			::-moz-placeholder { /* Mozilla Firefox 19+ */
-			   color:    black;
-			   opacity:  1;
-			}
-			:-ms-input-placeholder { /* Internet Explorer 10-11 */
-			   color:    black;
-			}
-			textarea:focus, input:focus{
- 			   outline: none;
-			}
-		</style>
+		<script src="backbone.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</header>
 	<body>	
 		<div align="center">
 			<div id="tag1">
 				<img src="snapcode.png" id="imageTag"/>
 			</div>
-			<br>
 			<form onsubmit="return displayCoolAnimation()">
-				<input type="text" id="username" placeholder="enter snapchat username"onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter snapchat username'"autocomplete="off">
+				<input type="text" id="username" placeholder="enter snapchat username"onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter snapchat username'"autocomplete="off"/>
 			</form>
 			<a class="button" id="mainButton" onclick="displayCoolAnimation()">Generate Snap Tag</a>
 			<div id="hidden" style="display:none">
 				<button class="button2 jscolor
 	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setBackColor(this)'}">
-	    			Pick background color
+	    			BACKGROUND COLOR
 				</button>
 				<br>
 				<br>
 				<button class="button2 jscolor
 	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setBorderColor(this)'}">
-	    			Pick border color
+	    			BORDER COLOR
 				</button>
 				<br>
 				<br>
 				<button class="button2 jscolor
 	    			{valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699',onFineChange:'setGhostColor(this)'}">
-	    			Pick ghost color
+	    			GHOST COLOR
 				</button>
 				<br>
+				<br>
+				<a  onclick="drawCanvas()" class="button" id="AlmostDone">DOWNLOAD</a>
+				<a  href="#" class="button" style="display:none" id="done" download="snaptag.png">Download</a>
+				<canvas id="canvas" width=300 height=300 style="display:none"></canvas>
 			</div>
-			
 		</div>
 	</body>
 <html>
