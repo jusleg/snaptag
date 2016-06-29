@@ -7,8 +7,8 @@ Make your own custom snapcode
 ##How it works
 
 1. Query the Snapchat API to get snapcode
-2. Send snapcode to PHP script to add necessary tag
-3. Select the colors using [jscolor picker](htttp://jscolor.com)
+2. Send snapcode to PHP script to add necessary tags
+3. Select the colors using [jscolor picker](http://jscolor.com)
 4. Render the SVG as a canvas
 5. Convert the canvas to PNG
 6. Download the PNG
