@@ -31,15 +31,21 @@ function fill(){
 }
 //setting background color
 function setBackColor(picker) {
-	document.getElementById('back').style.fill = '#' + picker.toString();
+	var objs= document.getElementsByClassName('back');
+        objs[0].style.fill = '#' + picker.toString();
+        objs[1].style.fill = '#' + picker.toString();
 }
 //setting border color
 function setBorderColor(picker) {
-    document.getElementById('border').style.fill = '#' + picker.toString();
+    var objs= document.getElementsByClassName('border');
+    objs[0].style.fill = '#' + picker.toString();
+    objs[1].style.fill = '#' + picker.toString();
 }
 //setting ghost color
 function setGhostColor(picker) {
-    document.getElementById('ghost').style.fill = '#' + picker.toString();
+    var objs= document.getElementsByClassName('ghost');
+    objs[0].style.fill = '#' + picker.toString();
+    objs[1].style.fill = '#' + picker.toString();
 }
 function drawCanvas(){
 var svgText = document.getElementById("tag").outerHTML;
