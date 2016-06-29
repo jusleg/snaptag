@@ -1,13 +1,18 @@
 # Snaptag
-Make your own custom snapcode
 
 ![gif](/img/snap.gif)
 
-This little website allows you to customize your snapcode.
+Make your own custom snapcode
 
 ##How it works
 
-First, we query the Snapchat API to get your snapcode. The snapcode is then ran through a PHP script to convert it to an svg that is editable. Using the website, you can change the different colors using [jscolor picker](jscolor.com). The snapcode is converted into a png to be downloaded.
+1. Query the Snapchat API to get snapcode
+2. Send snapcode to PHP script to add necessary tag
+3. Select the colors using [jscolor picker](htttp://jscolor.com)
+4. Render the SVG as a canvas
+5. Convert the canvas to PNG
+6. Download the PNG
+7. showcase your cool snapcode :smile:
 
 ##API
 
@@ -37,7 +42,7 @@ You can try my script at [http://159.203.39.241/snapcode.php](http://159.203.39.
 
 ##Modifications
 
-I am using the php script because it inserts the necessary id tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
+I am using the PHP script because it inserts the necessary id tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
 
 | **Name** |   **id**  |
 |:------------:|:-------:|
