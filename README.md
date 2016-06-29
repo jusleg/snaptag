@@ -35,11 +35,9 @@ You can try my script at [http://159.203.39.241/snapcode.php](http://159.203.39.
 
 I am using the php script because it inserts the necessary id tags to do DOM manipulations.
 
-**Snapcode**        #tag
-
-**Ghost**       #ghost
-
-**Code**        #back
-
-**Frame**        #border
+| **Snapcode** |   #tag  |
+|:------------:|:-------:|
+|   **Ghost**  |  #ghost |
+|   **Code**   |  #back  |
+|   **Frame**  | #border |
 
