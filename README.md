@@ -46,4 +46,21 @@ I am using the php script because it inserts the necessary id tags to do DOM man
 
 To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/raw/gh-pages/Snapcode_Guidelines.pdf)
 
+##Limitations
+
+The only limitation of this project at the moment is that Snapcodes cannot be downloaded from an iOS device. This is due to the canvas rendering used to convert from SVG to PNG. This is not a problem on Android devices or desktop. I will try to use a php script to convert the SVG to PNG if the user is on iOS.
+
+##Future improvements
+
+* iOS download
+* Ability to insert a picture inside the ghost
+* custom sizes
+* animated snapcodes (like the one pictured above)
+
+##Credits
+
+* [**Snapchat**](http://snapchat.com) - Snapcode API
+* [**jscolor**](http://jscolor.com) - Javascript Color Picker
+* [**StackOverflow**](http://stackoverflow.com) - Valuable help :smile:
+
 
