@@ -2,6 +2,18 @@
 		font-family: helveticaNL;
 		src: url(HelveticaNeue-Light.otf);
 }
+.linkbottom{
+	color:#607D8B;
+	text-decoration:none;
+}
+.linkbottom a:hover{
+	color:blue;
+}
+footer{
+	bottom:5px;
+	position absolute;
+}
+
 body{
 	font-family: helveticaNL;
     min-width: 300px;
