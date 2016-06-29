@@ -37,13 +37,13 @@ I am using the php script because it inserts the necessary id tags to do DOM man
 
 ![guidelines](img/guidelines.png)
 
-*picture taken from the Snapcode Scan Guidelines*
-
 | **Name** |   **id**  |
 |:------------:|:-------:|
 | **Snapcode** |   #tag  |
 |   **Ghost**  |  #ghost |
 |   **Code**   |  #back  |
 |   **Frame**  | #border |
+
+To read about scan guidelines, you can read Snapchat's Snapcode Scan Guidelines
 
 
