@@ -1,5 +1,5 @@
 # Snaptag
-Snapchat snapcode generator
+Make your own custom snapcode
 
 ![gif](/img/snap.gif)
 
