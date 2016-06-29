@@ -1,2 +1,4 @@
 # Snaptag
-Snapchat tag generator
+Snapchat snapcode generator
+
+![gif](snap.gif)
