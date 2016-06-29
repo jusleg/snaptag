@@ -25,4 +25,4 @@ I made a simple php api that inserts id tag in the svg to be able to modify it v
                 $file = substr($file, 0, $pos+4)." id=\"ghost\" ".substr($file, $pos+5);
                 echo $file;
         }
-?>
+    ?>
