@@ -13,6 +13,7 @@ I made a simple php api that inserts id tag in the svg to be able to modify it v
         header('Access-Control-Allow-Origin: *');
         $username = $_GET["username"];
         if(strlen($username)>0){
+                //snapchat api call
                 $url = "https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username=".$username."&type=SVG&size=300";
                 $file = file_get_contents($url, false, $context);
                 $pos =strpos($file,"svg");
