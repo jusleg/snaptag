@@ -44,6 +44,6 @@ I am using the php script because it inserts the necessary id tags to do DOM man
 
 ![guidelines](img/guidelines.png) 
 
-To read about scan guidelines, you can read Snapchat's Snapcode Scan Guidelines
+To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/raw/gh-pages/Snapcode_Guidelines.pdf)
 
 
