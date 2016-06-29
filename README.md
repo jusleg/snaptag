@@ -44,14 +44,14 @@ You can try my script at [http://159.203.39.241/snapcode.php](http://159.203.39.
 
 ##Modifications
 
-I am using the PHP script because it inserts the necessary id tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
+I am using the PHP script because it inserts the necessary id and class tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
 
-| **Name** |   **id**  |
+| **Name** |   **id or class**  |
 |:------------:|:-------:|
 | **Snapcode** |   #tag  |
-|   **Ghost**  |  #ghost |
-|   **Code**   |  #back  |
-|   **Frame**  | #border |
+|   **Ghost**  |  .ghost |
+|   **Code**   |  .back  |
+|   **Frame**  | .border |
 
 ![guidelines](img/guidelines.png) 
 
