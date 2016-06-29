@@ -36,8 +36,7 @@ You can try my script at [http://159.203.39.241/snapcode.php](http://159.203.39.
 I am using the php script because it inserts the necessary id tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
 
 ![guidelines](img/guidelines.png)
-
-picture taken from the Snapcode Scan Guidelines
+*picture taken from the Snapcode Scan Guidelines*
 
 | **Name** |   **id**  |
 |:------------:|:-------:|
