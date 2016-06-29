@@ -3,15 +3,17 @@
 		src: url(HelveticaNeue-Light.otf);
 }
 .linkbottom{
-	color:#607D8B;
+	color:black;
+    opacity: .8;
 	text-decoration:none;
 }
-.linkbottom a:hover{
-	color:blue;
+.linkbottom:hover{
+	color:black;
 }
-footer{
-	bottom:5px;
-	position absolute;
+#footer{
+    font-size:0.8em;
+	color:darkgray;
+    padding-bottom: 5px;
 }
 
 body{
