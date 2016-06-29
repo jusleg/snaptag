@@ -1,7 +1,7 @@
 # Snaptag
 Snapchat snapcode generator
 
-![gif](snap.gif)
+![gif](/img/snap.gif)
 
 This little website allows you to get your snapcode via the Snapchat api. The snapcode is then ran through a PHP script to convert it to an svg that is editable. Using the website, you can change the different colors using [jscolor picker](jscolor.com). The snapcode is converted into a png to be downloaded.
 
