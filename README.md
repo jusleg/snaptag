@@ -4,6 +4,8 @@
 
 Make your own custom snapcode
 
+[Live demo](http://jusleg.com/snaptag)
+
 ##How it works
 
 1. Query the Snapchat API to get snapcode
