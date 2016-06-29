@@ -25,8 +25,9 @@ function fill(){
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     var response  = xmlHttp.responseText;
-    console.log(response);
+    //console.log(response);
 	tag.innerHTML  = response;
+    done=true;
 }
 //setting background color
 function setBackColor(picker) {
@@ -44,7 +45,6 @@ function drawCanvas(){
 var svgText = document.getElementById("tag").outerHTML;
 var myCanvas = document.getElementById("canvas");
 var ctxt = myCanvas.getContext("2d");
-ctxt.imageSmoothingEnabled = true;
 function drawInlineSVG(ctx, rawSVG, callback) {
     var svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
         domURL = self.URL || self.webkitURL || self,
@@ -63,12 +63,17 @@ drawInlineSVG(ctxt, svgText, function() {
     var canvas = document.getElementById("canvas");
 	var dataURL = canvas.toDataURL('image/png');
 	button.href = dataURL;
-	button.click(); // toggle the download
+    button.click(); // toggle the download
 });
 }
 //check if the image is drawn before downloading
 function verify(){
-	if(done){
-		drawCanvas();
-	}
+    if(done){
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if(iOS){
+            alert('It looks like you are using an iOS device. Downloading is not available at this moment. You will be able to download on a desktop or using an Android device.');
+        } else {
+            drawCanvas();
+        }  
+    }
 }
