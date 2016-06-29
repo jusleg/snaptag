@@ -1,6 +1,6 @@
 # Snaptag
 
-![gif](/img/snap.gif)
+![gif](/img/snapcode.gif)
 
 Make your own custom snapcode
 
