@@ -50,6 +50,8 @@ function setGhostColor(picker) {
 function drawCanvas(){
 var svgText = document.getElementById("tag").outerHTML;
 var myCanvas = document.getElementById("canvas");
+myCanvas.width=512;
+myCanvas.height=512;
 var ctxt = myCanvas.getContext("2d");
 function drawInlineSVG(ctx, rawSVG, callback) {
     var svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
