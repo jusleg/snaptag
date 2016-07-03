@@ -79,7 +79,8 @@ function verify(){
     if(done){
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if(iOS){
-            alert('It looks like you are using an iOS device. Downloading is not available at this moment. You will be able to download on a desktop or using an Android device.');
+        	drawCanvas();
+            //alert('It looks like you are using an iOS device. Downloading is not available at this moment. You will be able to download on a desktop or using an Android device.');
         } else {
             drawCanvas();
         }  
