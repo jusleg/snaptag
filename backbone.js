@@ -19,7 +19,7 @@ function displayCoolAnimation(){
 function fill(){
 	var username = document.getElementById("username").value;
 	var tag = document.getElementById("tag1");
-	var theUrl = "http://159.203.39.241/index.php?username="+username;
+	var theUrl = "http://snapcodes.herokuapp.com/code.php?username="+username;
     var xmlHttp = null;
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
