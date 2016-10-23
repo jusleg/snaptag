@@ -57,9 +57,17 @@ I am using the PHP script because it inserts the necessary id and class tags to 
 
 To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/raw/gh-pages/ress/Snapcode_Guidelines.pdf)
 
+##Gif background (Beta)
+
+You can put a gif instead of an image. You can fiddle around with the code on this [codepen](https://codepen.io/jusleg/pen/dXREyV)
+
 ##Limitations
 
 The only limitation of this project at the moment is that Snapcodes cannot be downloaded from an iOS device. This is due to the canvas rendering used to convert from SVG to PNG. This is not a problem on Android devices or desktop. I will try to use a php script to convert the SVG to PNG if the user is on iOS.
+
+##People currently using snaptag
+
+* [Snaptag stickers](http://socialtagstickers.com/)
 
 ##Future improvements
 
