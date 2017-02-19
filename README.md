@@ -55,7 +55,7 @@ I am using the PHP script because it inserts the necessary id and class tags to 
 
 ![guidelines](img/guidelines.png) 
 
-To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/raw/gh-pages/ress/Snapcode_Guidelines.pdf)
+To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/blob/master/ress/Snapcode_Guidelines.pdf)
 
 ##Gif background (Beta)
 
