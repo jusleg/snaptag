@@ -4,7 +4,7 @@
 
 Make your own custom snapcode
 
-[Live demo](http://jusleg.com/snaptag)
+[Live demo](https://snapcodes.herokuapp.com/)
 
 ##How it works
 
