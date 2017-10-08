@@ -6,7 +6,7 @@ Make your own custom snapcode
 
 [Live demo](https://snapcodes.herokuapp.com/)
 
-##How it works
+## How it works
 
 1. Query the Snapchat API to get snapcode
 2. Send snapcode to PHP script to add necessary tags
@@ -16,7 +16,7 @@ Make your own custom snapcode
 6. Download the PNG
 7. showcase your cool snapcode :smile:
 
-##API
+## API
 
 I made a simple php script that inserts id tag in the svg to be able to modify it via css or using javascript.
 
@@ -42,7 +42,7 @@ I made a simple php script that inserts id tag in the svg to be able to modify i
     
 You can try my script at [https://snapcodes.herokuapp.com/snapcode.php](https://snapcodes.herokuapp.com/snapcode.php?username=jusleg&size=400)
 
-##Modifications
+## Modifications
 
 I am using the PHP script because it inserts the necessary id and class tags to do DOM manipulations. Parts of the snapcode can be modified using the id below
 
@@ -57,26 +57,26 @@ I am using the PHP script because it inserts the necessary id and class tags to 
 
 To read about scan guidelines, you can read [Snapchat's Snapcode Scan Guidelines](https://github.com/jusleg/snaptag/blob/master/ress/Snapcode_Guidelines.pdf)
 
-##Gif background (Beta)
+## Gif background (Beta)
 
 You can put a gif instead of an image. You can fiddle around with the code on this [codepen](https://codepen.io/jusleg/pen/dXREyV)
 
-##Limitations
+## Limitations
 
 The only limitation of this project at the moment is that Snapcodes cannot be downloaded from an iOS device. This is due to the canvas rendering used to convert from SVG to PNG. This is not a problem on Android devices or desktop. I will try to use a php script to convert the SVG to PNG if the user is on iOS.
 
-##People currently using snaptag
+## People currently using snaptag
 
 * [Snaptag stickers](http://socialtagstickers.com/)
 
-##Future improvements
+## Future improvements
 
 * iOS download
 * Ability to insert a picture inside the ghost
 * custom sizes
 * animated snapcodes (like the one pictured above)
 
-##Credits
+## Credits
 
 * [**Snapchat**](http://snapchat.com) - Snapcode API
 * [**jscolor**](http://jscolor.com) - Javascript Color Picker
