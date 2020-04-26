@@ -4,8 +4,6 @@
 
 Make your own custom snapcode
 
-[Live demo](https://snapcodes.herokuapp.com/)
-
 ## How it works
 
 1. Query the Snapchat API to get snapcode
@@ -39,8 +37,7 @@ I made a simple php script that inserts id tag in the svg to be able to modify i
                 echo $file;
         }
     ?>
-    
-You can try my script at [https://snapcodes.herokuapp.com/snapcode.php](https://snapcodes.herokuapp.com/snapcode.php?username=jusleg&size=400)
+
 
 ## Modifications
 
